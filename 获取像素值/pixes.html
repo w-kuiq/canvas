@@ -19,7 +19,7 @@
 		var ctx = canvas.getContext('2d');
 		var image = new Image();
 		image.src="car.jpg";
-		ctx.drawImage(image,0,0)
+		ctx.drawImage(image,0,0);
 		canvas.onmousemove=function (e) {
 			var canvasX= (e.pageX-canvas.offsetLeft);
 			var canvasY=(e.pageY-canvas.offsetTop);
