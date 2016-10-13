@@ -3,9 +3,30 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
+	<style>
+
+	</style>
 </head>
 <body>
+    <canvas width="400px" height="400px" id="canvas"></canvas>
 	<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
-	
+	<script>
+		var canvas = document.getElementById('canvas');
+		var ctx = canvas.getContext('2d');
+		var image = new Image();
+		image.src="car.jpg";
+
+		ctx.drawImage(image,0,0)
+		var imgData = ctx.getImageData(5,8,1,1);
+		console.log(imgData.data);
+
+		canvas.onclick=function (e) {
+			var cOffset= ctx.offset();
+			var canvasX= (e.pageX-cOffset.left);
+			var canvasY=(e.pageY-cOffset.top);
+			var imgData=getImageData(canvasX,canvasY,1,1);
+			console.log(imgData);
+		}
+	</script>
 </body>
 </html>
